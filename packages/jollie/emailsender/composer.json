@@ -1,0 +1,20 @@
+{
+    "name": "root/emailsender",
+    "description": "Demo for queue",
+    "authors": [
+        {
+            "name": "Joe Ward",
+            "email": "joe.ward@enta.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "pda/pheanstalk": "^3.1"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Jollie\\EmailSender\\": "src/"
+        }
+    }
+}
