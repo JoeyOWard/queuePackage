@@ -10,9 +10,8 @@ namespace Jollie\EmailSender;
 
 use App\Http\Controllers\Controller;
 
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Queue;
+use Jollie\EmailSender\Jobs\SendEmail;
+
 
 class EmailSenderController extends Controller
 {
@@ -20,8 +19,8 @@ class EmailSenderController extends Controller
     public function parse()
     {
 
-
-        Mail::to('batman@batcave.io')->send(new KryptoniteFound);
+        $message = null;
+        dispatch(new SendEmail($message));
 
     }
 

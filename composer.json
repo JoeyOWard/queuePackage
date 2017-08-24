@@ -21,7 +21,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Jollie\\EmailSender\\": "vendor/jollie/emailsender/src"
+            "Jollie\\EmailSender\\": "packages/jollie/emailsender/src"
         }
     },
     "autoload-dev": {

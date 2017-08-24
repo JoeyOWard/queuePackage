@@ -7,6 +7,9 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Support\Facades\Mail;
+use Jollie\EmailSender\Mail\BasicEmail;
+use Carbon\Carbon;
 
 class SendEmail implements ShouldQueue
 {
@@ -31,6 +34,10 @@ class SendEmail implements ShouldQueue
      */
     public function handle()
     {
+
+        $delay = Carbon::now()->addMinutes(1);
+
+        Mail::to('joe.ward@enta.net')->later($delay, new BasicEmail());
 
     }
 }
