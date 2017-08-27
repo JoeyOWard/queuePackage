@@ -28,11 +28,11 @@ class BasicEmail extends Mailable
      */
     public function build()
     {
-        $address = 'Lardy.io';
+        $address = 'me@gmail.com';
         $name = 'Test Email';
-        $subject = 'Oooooo eeee';
+        $subject = 'Test';
 
-        return $this->view('emails.basicemail')
+        return $this->view('emailsender::emails/basicemail')
             ->from($address, $name)
             ->cc($address, $name)
             ->bcc($address, $name)

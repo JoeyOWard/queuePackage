@@ -35,9 +35,10 @@ class SendEmail implements ShouldQueue
     public function handle()
     {
 
+        //echo('Hello');
         $delay = Carbon::now()->addMinutes(1);
 
-        Mail::to('joe.ward@enta.net')->later($delay, new BasicEmail());
+        Mail::to('joeoward@gmail.com')->later($delay, new BasicEmail());
 
     }
 }
