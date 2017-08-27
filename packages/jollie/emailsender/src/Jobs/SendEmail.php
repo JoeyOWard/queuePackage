@@ -15,16 +15,16 @@ class SendEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $message;
+    protected $address;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct($address)
     {
-        $this->message = $message;
+        $this->address = $address;
     }
 
     /**
@@ -38,7 +38,7 @@ class SendEmail implements ShouldQueue
         //echo('Hello');
         $delay = Carbon::now()->addMinutes(1);
 
-        Mail::to('joeoward@gmail.com')->later($delay, new BasicEmail());
+        Mail::to($this->address)->later($delay, new BasicEmail());
 
     }
 }

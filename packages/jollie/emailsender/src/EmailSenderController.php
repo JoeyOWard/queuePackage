@@ -19,8 +19,11 @@ class EmailSenderController extends Controller
     public function parse()
     {
 
-        $message = null;
-        dispatch(new SendEmail($message));
+        $message = 'joeoward@gmail.com';
+
+        $job = (new SendEmail($message))->delay(60);
+
+        dispatch($job);
 
     }
 
