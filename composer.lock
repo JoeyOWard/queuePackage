@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e07f0d56dea3076ca4e80a55a2b365d",
+    "content-hash": "abc479a8a95ac6528d49eaec31828a42",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -234,6 +234,42 @@
                 }
             ],
             "time": "2015-04-20T18:58:01+00:00"
+        },
+        {
+            "name": "jollie/emailsender",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LardyFatLips/emailer.git",
+                "reference": "07fa9ec879ef5e3a603537fd643addc8768a4162"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LardyFatLips/emailer/zipball/07fa9ec879ef5e3a603537fd643addc8768a4162",
+                "reference": "07fa9ec879ef5e3a603537fd643addc8768a4162",
+                "shasum": ""
+            },
+            "require": {
+                "pda/pheanstalk": "^3.1"
+            },
+            "require-dev": {
+                "pda/pheanstalk": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jollie\\EmailSender\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Joe Ward",
+                    "email": "joe.ward@enta.net"
+                }
+            ],
+            "description": "Demo for queue",
+            "time": "2017-08-28 12:26:19"
         },
         {
             "name": "laravel/framework",
@@ -3413,7 +3449,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "jollie/emailsender": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
