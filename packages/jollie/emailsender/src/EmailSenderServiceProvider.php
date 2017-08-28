@@ -15,6 +15,7 @@ class EmailSenderServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
         $this->loadViewsFrom(__DIR__. '/resources/views/', 'emailsender');
+        $this->publishes([__DIR__.'/resources/views' =>base_path('resources/views/jollie/emailsender')]);
     }
 
     /**
@@ -25,5 +26,6 @@ class EmailSenderServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->make('Jollie\EmailSender\EmailSenderController');
+        $this->app->make('Jollie\EmailSender\Http\Requests\EmailRequest');
     }
 }

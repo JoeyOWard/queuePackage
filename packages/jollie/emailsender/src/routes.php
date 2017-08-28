@@ -1,4 +1,4 @@
 <?php
 
 
-Route::get('/emailer', 'Jollie\EmailSender\EmailSenderController@parse');
+Route::post('/emailer', 'Jollie\EmailSender\EmailSenderController@parse');

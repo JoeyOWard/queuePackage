@@ -10,18 +10,19 @@ namespace Jollie\EmailSender;
 
 use App\Http\Controllers\Controller;
 
+use Jollie\EmailSender\Http\Requests\EmailRequest;
 use Jollie\EmailSender\Jobs\SendEmail;
 
 
 class EmailSenderController extends Controller
 {
 
-    public function parse()
+    public function parse(EmailRequest $request)
     {
 
-        $message = 'joeoward@gmail.com';
+        $email = ($request->input()['email']);
 
-        $job = (new SendEmail($message))->delay(60);
+        $job = (new SendEmail($email));
 
         dispatch($job);
 
